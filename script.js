@@ -82,8 +82,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// 商品データ（ECサイトの商品ラインナップから）
+const products = [
+    { name: 'ビスコッティ くるみチョコ(2本入り)', price: '¥300', image: './img/product-01.jpg', alt: 'ビスコッティ くるみチョコ' },
+    { name: 'マカデミアナッツクッキー(4個入り)', price: '¥400', image: './img/product-02.jpg', alt: 'マカデミアナッツクッキー' },
+    { name: '塩バターサブレ(4枚入り)', price: '¥400', image: './img/product-03.jpg', alt: '塩バターサブレ' },
+    { name: 'ビスコッティ ストロベリー(2本入り)', price: '¥300', image: './img/product-04.jpg', alt: 'ビスコッティ ストロベリー' },
+    { name: 'ディアマンクッキーチョコ(5枚入り)', price: '¥400', image: './img/product-05.jpg', alt: 'ディアマンクッキーチョコ' },
+    { name: 'チョコチップクッキー(4枚入り)', price: '¥400', image: './img/product-06.jpg', alt: 'チョコチップクッキー' },
+    { name: 'メレンゲクッキー(13個入り)', price: '¥400', image: './img/product-07.jpg', alt: 'メレンゲクッキー' },
+    { name: 'メレンゲプレッツェル(4個入り)', price: '¥400', image: './img/product-08.jpg', alt: 'メレンゲプレッツェル' },
+    { name: 'biscottiくんクッキー', price: '¥500', image: './img/product-09.jpg', alt: 'biscottiくんクッキー' },
+    { name: 'フロランタン(4個入り)', price: '¥400', image: './img/product-10.jpg', alt: 'フロランタン' },
+    { name: 'ビスコッティ コーヒー(2本入り)', price: '¥300', image: './img/product-11.jpg', alt: 'ビスコッティ コーヒー' },
+    { name: 'ビスコッティ チョコレート(2本入り)', price: '¥300', image: './img/product-12.jpg', alt: 'ビスコッティ チョコレート' }
+];
+
+// 商品カルーセルのHTMLを生成
+function generateProductCarousel() {
+    const carouselTrack = document.getElementById('carouselTrack');
+    if (!carouselTrack) return;
+    
+    // カルーセルをクリア
+    carouselTrack.innerHTML = '';
+    
+    // 商品を2セット追加（無限ループ用）
+    for (let set = 0; set < 2; set++) {
+        products.forEach((product, index) => {
+            const productItem = document.createElement('div');
+            productItem.className = 'carousel-item';
+            productItem.innerHTML = `
+                <div class="product-image">
+                    <div class="image-placeholder">
+                        <img src="${product.image}" alt="${product.alt}">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p class="product-price">${product.price}</p>
+                </div>
+            `;
+            carouselTrack.appendChild(productItem);
+        });
+    }
+}
+
 // 自動カルーセル機能
 document.addEventListener('DOMContentLoaded', () => {
+    // まず商品カルーセルを生成
+    generateProductCarousel();
+    
     const carouselTrack = document.getElementById('carouselTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -92,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const items = carouselTrack.querySelectorAll('.carousel-item');
     const totalItems = items.length;
-    const originalItems = totalItems / 2; // 元のアイテム数（複製前）
+    const originalItems = products.length; // 元のアイテム数
     let currentIndex = 0;
     let autoSlideInterval;
     let isTransitioning = false;
