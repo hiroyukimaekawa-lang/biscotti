@@ -84,18 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 商品データ（ECサイトの商品ラインナップから）
 const products = [
-    { name: 'ビスコッティ くるみチョコ<br>(2本入り)', price: '¥300', image: './img/product-01.jpg', alt: 'ビスコッティ くるみチョコ' },
-    { name: 'マカデミアナッツクッキー<br>(4個入り)', price: '¥400', image: './img/product-02.jpg', alt: 'マカデミアナッツクッキー' },
-    { name: '塩バターサブレ<br>(4枚入り)', price: '¥400', image: './img/product-03.jpg', alt: '塩バターサブレ' },
-    { name: 'ビスコッティ ストロベリー<br>(2本入り)', price: '¥300', image: './img/product-04.jpg', alt: 'ビスコッティ ストロベリー' },
-    { name: 'ディアマンクッキーチョコ<br>(5枚入り)', price: '¥400', image: './img/product-05.jpg', alt: 'ディアマンクッキーチョコ' },
-    { name: 'チョコチップクッキー<br>(4枚入り)', price: '¥400', image: './img/product-06.jpg', alt: 'チョコチップクッキー' },
-    { name: 'メレンゲクッキー<br>(13個入り)', price: '¥400', image: './img/product-07.jpg', alt: 'メレンゲクッキー' },
-    { name: 'メレンゲプレッツェル<br>(4個入り)', price: '¥400', image: './img/product-08.jpg', alt: 'メレンゲプレッツェル' },
-    { name: 'biscottiくんクッキー', price: '¥500', image: './img/product-09.jpg', alt: 'biscottiくんクッキー' },
-    { name: 'フロランタン<br>(4個入り)', price: '¥400', image: './img/product-10.jpg', alt: 'フロランタン' },
-    { name: 'ビスコッティ コーヒー<br>(2本入り)', price: '¥300', image: './img/product-11.jpg', alt: 'ビスコッティ コーヒー' },
-    { name: 'ビスコッティ チョコレート<br>(2本入り)', price: '¥300', image: './img/product-12.jpg', alt: 'ビスコッティ チョコレート' }
+    { name: 'ビスコッティ くるみチョコ<br>(2本入り)', price: '¥300', image: './img/biscotti-choco-kurumi.png', alt: 'ビスコッティ くるみチョコ' },
+    { name: 'マカデミアナッツクッキー<br>(4個入り)', price: '¥400', image: './img/macadamia-nats-cookie.png', alt: 'マカデミアナッツクッキー' },
+    { name: '塩バターサブレ<br>(4枚入り)', price: '¥400', image: 'img/salt-butter-sablet.jpg', alt: '塩バターサブレ' },
+    { name: 'ビスコッティ ストロベリー<br>(2本入り)', price: '¥300', image: 'img/biscoti-strawbery.png', alt: 'ビスコッティ ストロベリー' },
+    { name: 'ディアマンクッキーチョコ<br>(5枚入り)', price: '¥400', image: './img/bisc-diamante-cookie.png', alt: 'ディアマンクッキーチョコ' },
+    { name: 'ビスコッティ コーヒー<br>(2本入り)', price: '¥300', image: './img/biscoti-cofeee.png', alt: 'ビスコッティ コーヒー' },
 ];
 
 // 商品カルーセルのHTMLを生成
